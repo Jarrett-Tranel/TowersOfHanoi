@@ -1,72 +1,32 @@
-#include "Stack.hpp"
+//#include "Stack.hpp"
+#include "Towers.hpp"
 #include <iostream>
-
-
+#include <string>
+using namespace std;
 
 int main()
 {
     Stack* towerOne = new Stack();
     Stack* towerTwo = new Stack();
-    Stack* towerThree = new Stack();
+    Stack* towerThree = new Stack();   
 
+    towerOne->push("===");
+    towerOne->push("==");
+    towerOne->push("=");
+    Towers* collection = new Towers(towerOne, towerTwo, towerThree);
+    collection->displayTowers();
     
-
-    towerOne->push(111);
-    towerOne->push(11);
-    towerOne->push(1);
-    towerOne->display();
-
-    int move = towerOne->pop();
-    towerTwo->push(move);
-    std::cout << "Tower One: \n";
-    towerOne->display();
-    std::cout << "Tower Two: \n";
-    towerTwo->display();
-    std::cout << "Tower Three: \n";
-    towerThree->display();
-    std::cout << "\n";
-
-    move = towerOne->pop();
-    towerTwo->push(move);
-    std::cout << "Tower One: \n";
-    towerOne->display();
-    std::cout << "Tower Two: \n";
-    towerTwo->display();
-    std::cout << "Tower Three: \n";
-    towerThree->display();
-    std::cout << "\n";
+    collection->move(towerOne, towerTwo);
+    collection->displayTowers();
     
-    move = towerOne->pop();
-    towerThree->push(move);
-    std::cout << "Tower One: \n";
-    towerOne->display();
-    std::cout << "Tower Two: \n";
-    towerTwo->display();
-    std::cout << "Tower Three: \n";
-    towerThree->display();
-    std::cout << "\n";
+    collection->move(towerOne, towerTwo);
+    collection->displayTowers();
 
-    move = towerTwo->pop();
-    towerThree->push(move);
-    std::cout << "Tower One: \n";
-    towerOne->display();
-    std::cout << "Tower Two: \n";
-    towerTwo->display();
-    std::cout << "Tower Three: \n";
-    towerThree->display();
-    std::cout << "\n";
+    collection->move(towerTwo, towerThree);
+    collection->displayTowers();
 
-    move = towerTwo->pop();
-    towerThree->push(move);
-    std::cout << "Tower One: \n";
-    towerOne->display();
-    std::cout << "Tower Two: \n";
-    towerTwo->display();
-    std::cout << "Tower Three: \n";
-    towerThree->display();
-    std::cout << "\n";
-
-   
+    collection->move(towerTwo, towerThree);
+    collection->displayTowers();
 
     return 0;
 }

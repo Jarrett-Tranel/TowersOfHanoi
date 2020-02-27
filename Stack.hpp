@@ -7,8 +7,8 @@ class Stack
 
     public:
         Stack();
-        void push(int payload);
-        int pop();
-        int peek();
+        void push(string payload);
+        string pop();
+        string peek();
         void display();
 };

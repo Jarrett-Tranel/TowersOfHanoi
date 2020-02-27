@@ -1,12 +1,14 @@
 #include "Stack.hpp"
 #include <iostream>
+#include <string>
+using namespace std;
 
 Stack::Stack()
 {
     this->top = 0;
 }
 
-void Stack::push (int payload)
+void Stack::push (string payload)
 {
     Node* n = new Node(payload);
     if(top)
@@ -22,9 +24,9 @@ void Stack::push (int payload)
     
 }
 
-int Stack::pop()
+string Stack::pop()
 {
-    int valueToReturn = this->top->getPayload();
+    string valueToReturn = this->top->getPayload();
     Node* temp = this->top;
     top = top->getNextNode();
     temp->setNextNode(0);
@@ -32,7 +34,7 @@ int Stack::pop()
     return valueToReturn;
 }
 
-int Stack::peek()
+string Stack::peek()
 {
     return this->top->getPayload();
 }

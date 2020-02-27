@@ -1,13 +1,15 @@
 #include "Node.hpp"
 #include <iostream>
+#include <string>
+using namespace std;
     
-Node::Node(int payload)
+Node::Node(string payload)
 {
     this->payload = payload;
     this->nextNode = 0;
 }
 
-int Node::getPayload()
+string Node::getPayload()
 {
    return this->payload; 
 }
